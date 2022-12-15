@@ -1,4 +1,4 @@
-import { add, deletes } from '../modules/utils.js';
+import { mockAdd, mockDeletes } from '../modules/utils.js';
 
 describe.each([
   ['Hello', 1],
@@ -6,8 +6,17 @@ describe.each([
   ['Gooday', 3],
 ])('Add an item:', (a, b) => {
   test('Adding', () => {
-    expect(add(a)).toHaveLength(b);
+    expect(mockAdd(a)).toHaveLength(b);
   });
 });
 
 // Yash make your changes below
+describe.each([
+  [2, 2],
+  [1, 1],
+  [0, 0],
+])('Delete an item:', (a, b) => {
+  test('should delete one todo task test1', () => {
+    expect(mockDeletes(a)).toHaveLength(b);
+  });
+});

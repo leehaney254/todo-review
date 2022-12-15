@@ -1,6 +1,6 @@
 import { storeData, getData } from './complete.js';
 
-const add = (input) => {
+const mockAdd = (input) => {
   const addObj = {};
   const list = getData();
   if (list.length === 0) {
@@ -15,7 +15,7 @@ const add = (input) => {
   return list;
 };
 
-const deletes = (index) => {
+const mockDeletes = (index) => {
   const list = getData();
   list.splice(index, 1);
   list.forEach((item, index) => {
@@ -25,4 +25,4 @@ const deletes = (index) => {
   return list;
 };
 
-export { add, deletes };
+export { mockAdd, mockDeletes };
