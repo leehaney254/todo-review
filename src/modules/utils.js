@@ -15,4 +15,14 @@ const add = (input) => {
   return list;
 };
 
-export default add;
+const deletes = (index) => {
+  const list = getData();
+  list.splice(index, 1);
+  list.forEach((item, index) => {
+    item.index = index;
+  });
+  storeData(list);
+  return list;
+};
+
+export { add, deletes };
