@@ -39,6 +39,13 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "jest-localstorage-mock": "^2.4.25",
     "lodash": "^4.17.21"
+  },
+  "jest": {
+    "resetMocks": false,
+    "setupFiles": [
+      "jest-localstorage-mock"
+    ]
   }
 }
