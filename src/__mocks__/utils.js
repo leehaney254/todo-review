@@ -1,4 +1,4 @@
-import { storeData, getData } from './complete.js';
+import { storeData, getData } from '../modules/complete.js';
 
 const add = (input) => {
   const addObj = {};

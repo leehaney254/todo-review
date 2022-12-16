@@ -1,4 +1,4 @@
-import { add, deletes } from '../modules/utils.js';
+import { add, deletes } from '../__mocks__/utils.js';
 
 describe.each([
   ['Hello', 1],
@@ -9,8 +9,6 @@ describe.each([
     expect(add(a)).toHaveLength(b);
   });
 });
-
-// Yash
 
 describe.each([
   [2, 2],
