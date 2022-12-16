@@ -39,11 +39,16 @@ const mockClearComplete = (element) => {
   const list = [];
   if (element.completed === false) {
     list.push(element);
-    console.log(list);
   }
   return list;
 };
 
+const mockUpdate = (data) => {
+  const list = [];
+  list.push(data);
+  return list;
+};
+
 export {
-  mockAdd, mockDeletes, mockEditElement, mockClearComplete,
+  mockAdd, mockDeletes, mockEditElement, mockClearComplete, mockUpdate,
 };

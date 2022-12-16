@@ -1,5 +1,5 @@
 import {
-  mockAdd, mockDeletes, mockEditElement, mockClearComplete,
+  mockAdd, mockDeletes, mockEditElement, mockClearComplete, mockUpdate,
 } from '../__mock__/utils.js';
 
 describe.each([
@@ -22,7 +22,6 @@ describe.each([
   });
 });
 
-// Kennedy change here
 describe.each([
   [2, 2],
   [1, 1],
@@ -33,7 +32,6 @@ describe.each([
   });
 });
 
-// Yash change here
 describe.each([
   [{ index: 0, description: 'Hi', completed: false }, 1],
   [{ index: 1, description: 'Bye', completed: true }, 0],
@@ -46,4 +44,14 @@ describe.each([
   });
 });
 
-
+describe.each([
+  [{ index: 0, description: 'Hi', completed: false }, 1],
+  [{ index: 1, description: 'Bye', completed: true }, 1],
+  [{ index: 2, description: 'Today', completed: false }, 1],
+  [{ index: 3, description: 'tommorrow', completed: false }, 1],
+  [{ index: 4, description: 'Last', completed: true }, 1],
+])('Clear all completed items:', (a, b) => {
+  test('should clear all completed', () => {
+    expect(mockUpdate(a)).toHaveLength(b);
+  });
+});
