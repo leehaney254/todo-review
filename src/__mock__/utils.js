@@ -1,4 +1,4 @@
-import { storeData, getData } from './complete.js';
+import { storeData, getData } from '../modules/complete.js';
 
 const mockAdd = (input) => {
   const addObj = {};
@@ -32,6 +32,18 @@ const mockEditElement = (input, index) => {
   obj.description = input;
   obj.completed = false;
   list.splice(index, 1, obj);
+  return list;
 };
 
-export { mockAdd, mockDeletes, mockEditElement };
+const mockClearComplete = (element) => {
+  const list = [];
+  if (element.completed === false) {
+    list.push(element);
+    console.log(list);
+  }
+  return list;
+};
+
+export {
+  mockAdd, mockDeletes, mockEditElement, mockClearComplete,
+};

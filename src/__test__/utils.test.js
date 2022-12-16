@@ -1,4 +1,6 @@
-import { mockAdd, mockDeletes, mockEditElement } from '../modules/utils.js';
+import {
+  mockAdd, mockDeletes, mockEditElement, mockClearComplete,
+} from '../__mock__/utils.js';
 
 describe.each([
   ['Hello', 1],
@@ -10,7 +12,17 @@ describe.each([
   });
 });
 
-// Yash make your changes below
+describe.each([
+  ['See', 2],
+  ['you', 1],
+  ['then', 0],
+])('Edit an item:', (a, b) => {
+  test('should edit one todo task test1', () => {
+    expect(mockEditElement(a, b)).toHaveLength(3);
+  });
+});
+
+// Kennedy change here
 describe.each([
   [2, 2],
   [1, 1],
@@ -21,12 +33,15 @@ describe.each([
   });
 });
 
+// Yash change here
 describe.each([
-  ['See', 0],
-  ['you', 1],
-  ['then', 2],
-])('Edit an item:', (a, b) => {
-  test('should edit one todo task test1', () => {
-    expect(mockEditElement(a)).toHaveLength(b);
+  [{ index: 0, description: 'Hi', completed: false }, 1],
+  [{ index: 1, description: 'Bye', completed: true }, 0],
+  [{ index: 2, description: 'Today', completed: false }, 1],
+  [{ index: 3, description: 'tommorrow', completed: false }, 1],
+  [{ index: 4, description: 'Last', completed: true }, 0],
+])('Clear all completed items:', (a, b) => {
+  test('should clear all completed', () => {
+    expect(mockClearComplete(a)).toHaveLength(b);
   });
 });
