@@ -25,4 +25,13 @@ const mockDeletes = (index) => {
   return list;
 };
 
-export { mockAdd, mockDeletes };
+const mockEditElement = (input, index) => {
+  const obj = {};
+  const list = getData();
+  obj.index = index;
+  obj.description = input;
+  obj.completed = false;
+  list.splice(index, 1, obj);
+};
+
+export { mockAdd, mockDeletes, mockEditElement };
