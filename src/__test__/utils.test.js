@@ -10,4 +10,14 @@ describe.each([
   });
 });
 
-// Yash make your changes below
+// Yash
+
+describe.each([
+  [2, 2],
+  [1, 1],
+  [0, 0],
+])('Delete an item:', (a, b) => {
+  test('should delete one todo task test1', () => {
+    expect(deletes(a)).toHaveLength(b);
+  });
+});
