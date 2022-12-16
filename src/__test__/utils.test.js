@@ -40,3 +40,15 @@ describe.each([
     expect(mockDeletes(a)).toHaveLength(b);
   });
 });
+
+describe.each([
+  [{ index: 0, description: 'Hi', completed: false }, 1],
+  [{ index: 1, description: 'Bye', completed: true }, 0],
+  [{ index: 2, description: 'Today', completed: false }, 1],
+  [{ index: 3, description: 'tommorrow', completed: false }, 1],
+  [{ index: 4, description: 'Last', completed: true }, 0],
+])('Clear all completed items:', (a, b) => {
+  test('should clear all completed', () => {
+    expect(mockClearComplete(a)).toHaveLength(b);
+  });
+});
