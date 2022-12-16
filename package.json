@@ -47,5 +47,6 @@
     "setupFiles": [
       "jest-localstorage-mock"
     ]
-  }
+  },
+  "main": "webpack.config.js"
 }
