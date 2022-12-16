@@ -1,7 +1,7 @@
-
 import {
   mockAdd, mockDeletes, mockEditElement, mockClearComplete, mockUpdate,
 } from '../__mock__/utils.js';
+
 describe.each([
   ['Hello', 1],
   ['Bye', 2],
